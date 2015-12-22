@@ -1,4 +1,6 @@
 import React from 'react';
+import UIActionComponent from './UIActionComponent.jsx';
+import ToggleComponent from './ToggleComponent.jsx';
 
 export default class IndexComponent extends React.Component {
   render() {
@@ -8,6 +10,8 @@ export default class IndexComponent extends React.Component {
       );
     }
 
+    var uiActionComponent = new UIActionComponent();
+
     return (
       <section>
         <h2>react-webpack-boilerplate</h2>
@@ -16,6 +20,10 @@ export default class IndexComponent extends React.Component {
             return (<li key={index}>item {item}</li>);
           })}
         </ul>
+        <ToggleComponent
+          onToggleOn={uiActionComponent.shouldPerformAction}
+          onToggleOff={uiActionComponent.shouldPerformOtherAction}
+          >Click me</ToggleComponent>
       </section>
     );
   }
