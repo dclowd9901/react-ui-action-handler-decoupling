@@ -1,5 +1,5 @@
 import React from 'react';
-import UIActionComponent from './UIActionComponent.jsx';
+import { shouldPerformAction, shouldPerformOtherAction } from './UIActionComponent.jsx';
 import ToggleComponent from './ToggleComponent.jsx';
 
 export default class IndexComponent extends React.Component {
@@ -21,8 +21,8 @@ export default class IndexComponent extends React.Component {
           })}
         </ul>
         <ToggleComponent
-          onToggleOn={uiActionComponent.shouldPerformAction}
-          onToggleOff={uiActionComponent.shouldPerformOtherAction}
+          onToggleOn={shouldPerformAction}
+          onToggleOff={shouldPerformOtherAction}
           >Click me</ToggleComponent>
       </section>
     );
